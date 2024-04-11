@@ -24,10 +24,11 @@ public class TableController {
     public String tableMain(Model model){
         Iterable<Goods> goods = goodsRepository.findAll();
         model.addAttribute("goods", goods);
-        model.addAttribute("title", "Список товаров");
+        model.addAttribute("title", "Список  товаров");
         return "table-main";
     }
 
+    //Add
     @GetMapping("/table/add-goods")
     public String addGoods(Model model){
         model.addAttribute("title", "Поставка товара");
@@ -70,5 +71,4 @@ public class TableController {
         goodsRepository.delete(good);
         return "redirect:/table";
     }
-
 }
